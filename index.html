@@ -1,113 +1,334 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ららられれ仮のお部屋</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<style>
-
-body { display: block; margin: 0; font-family: "Segoe UI", sans-serif; background-color: #0d141a; color: #fcfcfc; align-items: normal; }
-header { display: flex; justify-content: space-between; align-items: center; background-color: #121f27; padding: 15px 20px; border-bottom: 2px solid #77db84; }
-header .logo { font-size: 24px; font-weight: bold; }
-nav a { color: #fcfcfc; margin-left: 20px; text-decoration: none; }
-nav a:hover { color: #77b3db; }
-.container { display: flex; flex-direction: column; max-width: 1200px; margin: auto; padding: 20px; gap: 20px; }
-.main { flex: 3; display: flex; flex-direction: column; gap: 20px; }
-.sidebar { flex: 1; }
-.sidebar-box { background-color: #1f2e36; padding: 20px; margin-bottom: 20px; border-left: 8px solid #77b3db; box-shadow: 0px 4px 6px rgba(0,0,0,0.2); }
-.sidebar-box ul { list-style: none; padding-left: 0; }
-.sidebar-box a { color: #77db84; text-decoration: none; }
-.sidebar-box a:hover { text-decoration: underline; }
-footer { background-color: #121f27; padding: 15px; border-top: 2px solid #77db84; margin-top: 40px; justify-content:right; text-align:right; }
-a { color: #77db84; text-decoration: none; }
-@media screen and (min-width: 768px) { .container { flex-direction: row; } .sidebar { margin-left: 20px; } }
-@media screen and (max-width: 767px) { .container { padding: 10px; } nav a { margin-left: 10px; } .A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { padding: 15px; } }
-.A { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #9fdb77; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.B { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #77b3db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.C { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7777; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.D { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #c477db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.E { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #dba477; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.F { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #dbc977; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.G { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #bddb77; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.H { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #77dbba; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.I { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #7779db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.J { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7790; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.K { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7795; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.L { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f37979; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.M { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f3a679; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.N { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f3e179; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.O { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #a6f379; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.P { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79f3c4; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.Q { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79f3f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.R { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79a0f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.S { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #bc79f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.T { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f379d5; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.U { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f37993; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.V { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #5dd477; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.W { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #4069db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.X { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #ff5757; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.Y { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #32ff5e; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-.Z { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f7ea3c; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
-
-* { color: #423c3c; } body { background-color: #eaf0f1 !important; }
-.A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { background-color: #fbfbfb !important; }
-footer { background-color: #f0f2ef !important; } header { background-color: #e8e8e8 !important; } header a { color: #111 !important; }
-
-</style></head>
-<body class="light-theme">
-<header>
-<div class="logo">ららられれ</div>
-<nav>
-      <a href="https://rarararere.pages.dev">今のお部屋</a>
-</nav>
-</header>
-<main class="container">
-<section class="main">
-<article class="B">
-<h2>かりのおへや</h2>
-<div><p>仮のお部屋です。移行準備中!</p>
-</div>
-<p><small>2026/08/30</small></p>
-</article>
-</section>
-<aside class="sidebar">
-
-<div class="sidebar-box">
-<p><strong>現在時刻</strong></p>
-<span id="year"></span>年<span id="month"></span>月<span id="date"></span>日<span id="day"></span><br>
-<span id="hour"></span>:<span id="min"></span> <small><span id="sec"></span></small>
-</div>
-
-</aside>
-</main>
-<footer>
-<p><small>This page uses <a href="https://github.com/yokonoha/FSoverride" >FSLinear Override</a>.</small></p>
-</footer>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VM6JD5QJ7K"></script>
 <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-let errcode; document.addEventListener("DOMContentLoaded", () => {
-    setInterval((()=> {
-        let timemgr=new Date; let year=timemgr.getFullYear(); let mon=timemgr.getMonth()+1;
-        let xingqi=timemgr.getDay(); let hour=timemgr.getHours(); let min=timemgr.getMinutes();
-        let sec=timemgr.getSeconds(); let date=timemgr.getDate();
-        let decentformatofhour = (hour<10) ? "0"+hour : hour;
-        let decentformatofmin = (min<10) ? "0"+min : min;
-        let decentformatofsec = (sec<10) ? "0"+sec : sec;
-        let enday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][xingqi];
-        if(document.getElementById("year")) document.getElementById("year").innerHTML=year;
-        if(document.getElementById("month")) document.getElementById("month").innerHTML=mon;
-        if(document.getElementById("date")) document.getElementById("date").innerHTML=date;
-        if(document.getElementById("hour")) document.getElementById("hour").innerHTML=decentformatofhour;
-        if(document.getElementById("min")) document.getElementById("min").innerHTML=decentformatofmin;
-        if(document.getElementById("sec")) document.getElementById("sec").innerHTML=decentformatofsec;
-        if(document.getElementById("day")) document.getElementById("day").innerHTML=enday;
-        if(document.getElementById("ampm")) document.getElementById("ampm").innerHTML = (hour>=12) ? "PM" : "AM";
-        if(document.getElementById("hour2")) { let h12 = hour % 12; document.getElementById("hour2").innerHTML = (h12==0) ? 12 : h12; }
-    }),100);
-});
+  gtag('config', 'G-VM6JD5QJ7K');
 </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ららられれのお部屋 - The site of RararaRere</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+        align-items: center;
+    }
+    #header {
+      background-color: #79adc3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 5px;
+      background-image: linear-gradient(45deg, transparent 49%, #ffffff 49%, #ffffff 51%, transparent 51%);
+      background-size: 20px 20px;
+      
+    }
+    #content {
+      padding: 20px;
+    }
+    #links {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 20px;
+        border-radius: 5px;
+    }
+    #footer {
+      background-color: #b69090;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    #form
+    {
+    width: 100%;
+    background-color:white;
+    max-width: 600px; margin-top: 20px; border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+
+  <div id="header">
+    <img src="prf.jpg" alt="ぷろふぃーるのがぞう" style="border-radius: 50%; width: 150px; height: 150px; margin-top: 20px;">
+    <div style="background-color: rgb(116, 180, 97); margin: 10px; padding: 10px; border-radius: 10px;">
+    <h1 id="tr0015">ららられれのお部屋</h1>
+    <p id="tr0016">The site of RararaRere</p>
+</div>
+  </div>   
+  <div id="trnotice"></div>
+<img src="./bnr2026q2.jpg" alt="バナー画像2026Q2" style="width: 100%;max-width: 600px; margin-top: 20px; border-radius: 5px;">
+    
+    <div id="content">
+        <div style="justify-content: center; align-items: center;text-align: center; background-color: #e1edc3;padding: 10px;margin: 10px;border-radius: 5px;">
+        <h2><span id="time">こんにちは。</span>  <span id="tr0001">ららられれ です。</span></h2>
+        <p id="tr0002">このサイトは、ららられれのリンク集 兼 個人サイトです。</p>
+        <p id="tr0003">ひまなときに なにか 絵をかいてます。</p></div>
+
+    </div><canvas id="form"></canvas>
+    <p><small id="tr0017">↑クリックorタッチでおむすび投入↑<br>何も出てこないときは<a href="#" id="reloader">ここ</a>を押してね</small></p>
+    <script>
+        document.getElementById("reloader").addEventListener("click", function(event) {
+            event.preventDefault();
+            location.reload();
+        });
+    </script>
+     <p><span id="musubi_ate_quantity">0</span><span id="tr0018">個のおむすびを食べたよ!</span></p>
+     <a href="#" id="secret_room_link" style="display: none; padding: 10px 20px; background-color: #4ee453; color: white; text-decoration: none; border-radius: 5px;">ららられれ の ひみつのお部屋 に入れるよ!</a>
+<script src="./akarianim.js"></script>
+          <div id="beforedownloadpreviewer" style="z-index:7777; position:sticky; display: none; flex-direction: column; top: 30%;bottom: 50%;background-color: rgb(255, 255, 255);border-radius: 5px;border-style: solid;">
+        <div style="display: flex; flex-direction: row; align-items: center; padding: 10px;">
+        <img src="./notfoundplaceholder.png" alt="プレビュー" style="width: 50%; max-width: 300px; border-radius: 5px;user-select: none;" id="previewmado">
+        <h3 id="tr0008">ダウンロード前の<br>かくにん <p>← 探してたのって<br>これであってたかな?</p></h3>
+       </div>
+      <div style="display: flex; align-items: center; justify-content: space-around; padding: 10px;">
+        <div id="yesdownload" style="padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px; cursor: pointer;">これだよ!</div>
+        <div id="canceldownload" style="padding: 10px 20px; background-color: #e2746d; color: white; border-radius: 5px; cursor: pointer;">やっぱやめる</div>
+      </div>
+      </div>
+<div id="cntd" style="z-index: 1000; position: relative; margin-top: 20px; background-color: #fff; padding: 20px; border-radius: 5px;">
+        <h2 style="color: yellowgreen;"><span style="color: rgb(78, 224, 205);">あとりえから</span> さがす <br><span><small id="tr0019" ></small></span></h2>
+        
+        <p  id="tr0020">アクセスキーを入れると原寸イラストとかその他もろもろとかとひきかえできます <br>(れい: <span style="color: #4fac5c;" id="examplecpy">j.eclair2</span>)</p>
+        <div style="display: flex;">
+        <input type="password" id="delibox" placeholder="パスワードを入力..." style="flex: 1;padding: 8px;border: 1px solid #ccc;border-radius: 6px;background: #fff;color: #111;font-size: 0.95rem;"><br><br>
+        <button onclick="moveToPage()" style="padding: 8px 10px;border-radius: 6px;border: 1px solid #bbb;background: #b0e0e6;cursor: pointer;font-size: 0.95rem;">パスワードで検索</button><br><br>
+        </div>
+        <a href="#" id="mv2"><img src="./trademark.png" style="width: 50vw; display:none;  max-width: 250px;" id="mv21" alt="ファイルが見つかりました!"></a>
+      <!--BY 横茶横葉 Based on Contents Delivery of Y.Yokoha's Site-->
+      <!--X:パスパターンマッチ方式 O:HTTPリクエスト方式-->
+      </div>
+<img src="heiretsuhina.png" alt="へいれつにならぶ子(ひなちゃん)" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 5px;">
+<div style="justify-content: center; align-items: center;text-align: center; background-color: #e1edc3;padding: 10px;margin: 10px;border-radius: 5px;">
+<h2>らられれちゃんって?</h2>
+<img src="./rararere.png" alt="おばけみたいなおさかなのらられれちゃん" style="width: 50%;max-width: 200px;border-radius: 15px;"><br>
+<p>ららられれのサインから生まれた おばけみたいな おさかな。</p>
+<p>おさかなだけど、そらをとべるよ。</p>
+<p>おさかなだけど、おててがあるよ。</p>
+<p>おさかなだから、おひれがあるよ。</p>
+<p>おさかなだから、えびがだいすき。</p>
+<p>たまにスマートフォンを食べるよ。</p>
+</div>
+    <div>
+    <h2 id="tr0021">MY POSTS FROM X</h2>
+    <p id="tr0022">ログインしなくても みれるよ!</p>
+    <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">いなほ <a href="https://t.co/XUSejGLZh5">pic.twitter.com/XUSejGLZh5</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2092551000985092102?ref_src=twsrc%5Etfw">August 26, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">私生活が..またもや色々と忙しくなりそう。<br>...ちょっと待っててね..。<a href="https://x.com/hashtag/%E7%B5%90%E6%9C%88%E3%82%86%E3%81%8B%E3%82%8A%E9%9B%AB?src=hash&amp;ref_src=twsrc%5Etfw">#結月ゆかり雫</a> <a href="https://t.co/0dq1uQ03ia">pic.twitter.com/0dq1uQ03ia</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2082865186726391914?ref_src=twsrc%5Etfw">July 30, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">あかりちゃんも加えて...完成〜!<a href="https://x.com/hashtag/%E7%B5%90%E6%9C%88%E3%82%86%E3%81%8B%E3%82%8A?src=hash&amp;ref_src=twsrc%5Etfw">#結月ゆかり</a> <a href="https://x.com/hashtag/%E7%B4%B2%E6%98%9F%E3%81%82%E3%81%8B%E3%82%8A?src=hash&amp;ref_src=twsrc%5Etfw">#紲星あかり</a> <a href="https://x.com/hashtag/%E8%90%BD%E6%9B%B8%E3%81%8D?src=hash&amp;ref_src=twsrc%5Etfw">#落書き</a> <a href="https://t.co/LoCyQ4VTZ0">pic.twitter.com/LoCyQ4VTZ0</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2085041171496374513?ref_src=twsrc%5Etfw">August 5, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ゆかりちゃん2<a href="https://x.com/hashtag/%E7%B5%90%E6%9C%88%E3%82%86%E3%81%8B%E3%82%8A?src=hash&amp;ref_src=twsrc%5Etfw">#結月ゆかり</a>　<a href="https://x.com/hashtag/%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%A1?src=hash&amp;ref_src=twsrc%5Etfw">#デフォルメ</a>　<a href="https://x.com/hashtag/VOICEROID?src=hash&amp;ref_src=twsrc%5Etfw">#VOICEROID</a> <a href="https://t.co/A5KEq3u9fz">pic.twitter.com/A5KEq3u9fz</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2078061354209128665?ref_src=twsrc%5Etfw">July 17, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">エクレア! 甘くておいしい〜。<a href="https://x.com/hashtag/%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88?src=hash&amp;ref_src=twsrc%5Etfw">#イラスト</a> <a href="https://x.com/hashtag/%E8%90%BD%E6%9B%B8%E3%81%8D?src=hash&amp;ref_src=twsrc%5Etfw">#落書き</a> <a href="https://x.com/hashtag/confection?src=hash&amp;ref_src=twsrc%5Etfw">#confection</a> <a href="https://x.com/hashtag/%E3%81%8A%E8%8F%93%E5%AD%90?src=hash&amp;ref_src=twsrc%5Etfw">#お菓子</a> <a href="https://t.co/YP1hyweDfL">pic.twitter.com/YP1hyweDfL</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2077075875275939912?ref_src=twsrc%5Etfw">July 14, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+      <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ゆかりっ。<a href="https://twitter.com/hashtag/%E7%B5%90%E6%9C%88%E3%82%86%E3%81%8B%E3%82%8A?src=hash&amp;ref_src=twsrc%5Etfw">#結月ゆかり</a> <a href="https://t.co/0rR6IXiVTl">pic.twitter.com/0rR6IXiVTl</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://twitter.com/Rarararere1/status/2058900419326480643?ref_src=twsrc%5Etfw">2026年5月25日</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/1KD4hTtmOR">pic.twitter.com/1KD4hTtmOR</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2077774952787485066?ref_src=twsrc%5Etfw">July 16, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="zxx" dir="ltr"><a href="https://t.co/KmcxBsoccg">pic.twitter.com/KmcxBsoccg</a></p>&mdash; ららられれ (@Rarararere1) <a href="https://x.com/Rarararere1/status/2065311064741544336?ref_src=twsrc%5Etfw">June 12, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+    </div>
+<div id="links">
+    <h2>LINKS</h2>
+    <ul>
+        <li><a href="https://rarararere.pages.dev" id="tr0009">ここ。</a></li>
+        <li><a href="./rarararere.html" id="tr0014">ららられれ って?</a></li>
+        <li><a href="https://x.com/Rarararere1" id="tr0010">ららられれのついったー</a></li>
+        <li><a href="https://www.pixiv.net/users/125923702" id="tr0011">ららられれのぴくしぶ(あんまりないよ)</a></li>
+        <li><a href="https://ext.seiga.nicovideo.jp/user/illust/141983572" id="tr0013">ららられれのにこにこせいが(むかしのたちえも あるよ)</a></li>
+        </ul>
+</div>    
+    <div id="footer">
+        <p id="tr0012">Copyright (c) 2026 ららられれ. All rights reserved.<br>見に来てくれてありがとう!</p>
+    </div>
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            const hours = now.getHours();
+            let greeting = 'こんにちは!';
+            if (hours == 5) 
+                greeting = 'まだねてます!';
+            else if (hours ==6)
+                greeting = 'おはやいですね!';
+             else if (hours < 12)
+                greeting = 'おはようございます!';
+            else if (hours < 18)
+                greeting = 'こんにちは!';
+            else
+                greeting = 'こんばんは!';
+            timeElement.textContent = greeting;
+        }
+                function updateTimeEn() {
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            const hours = now.getHours();
+            let greeting = 'Good morning.';
+            if (hours == 5) 
+                greeting = 'I\'m still sleeping.';
+            else if (hours ==6)
+                greeting = 'Good morning.';
+             else if (hours < 12)
+                greeting = 'Good morning.';
+            else if (hours < 18)
+                greeting = 'Good afternoon.';
+            else
+                greeting = 'Good evening.';
+            timeElement.textContent = greeting;
+        }
+        //TEST
+        if (!navigator.language.startsWith('ja')) {
+             updateTimeEn();
+        } else {
+           updateTime();
+        }
+
+document.getElementById("examplecpy").addEventListener("click", function() {
+    const exampleText = document.getElementById("examplecpy").textContent;
+    navigator.clipboard.writeText(exampleText).then(function() {
+        if (navigator.language.startsWith('ja')) {
+            alert("コピーしたよ! 貼り付けてつかってみてね: " + exampleText);
+        } else {
+            alert("Copied! Try pasting it: " + exampleText);
+        }
+    }, function(err) {
+        if (navigator.language.startsWith('ja')) {
+            alert("コピーできなかったよ、ごめんね: 非対応 なのかも。");
+        } else {
+            alert("Could not copy, sorry: It might not be supported.");
+        }
+    });
+});
+
+
+        document.getElementById("delibox").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                moveToPage();
+            }
+        });
+
+        function moveToPage() {
+            const password = document.getElementById('delibox').value;
+           const urlprefix = 'https://rarararere.pages.dev/atelier/';
+            let url = urlprefix + password + '.png';
+            let relurl="./atelier/"+password+".png";
+            if(password.startsWith("j."))
+            {
+                url = urlprefix + password.substring(2) + '.jpg';
+                relurl="./atelier/"+password.substring(2)+".jpg";
+            }
+            try{
+              
+                fetch(url, { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('beforedownloadpreviewer').style.display = 'flex';
+                            document.getElementById('previewmado').src = relurl;
+
+                        } else {
+                            if (navigator.language.startsWith('ja')) {
+                                alert('あれれ...? ファイルがなかったよ。 パスワードをもう一度確認してね。(ごめんね)');
+                            } else {
+                                alert('Hmm...? The file was not found. Please check the password again.(Sorry!)');
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        if (navigator.language.startsWith('ja')) {
+                            alert('あれれ..? 通信えらーだよ? もう一度試してね。(ごめんね)');
+                        } else {
+                            alert('Hmm...? There was a communication error. Please try again.(Sorry!)');
+                        }
+                    });
+            } catch (error) {
+                console.error('Error:', error);
+                if (navigator.language.startsWith('ja')) {
+                    alert('あれれ...? 何かがおかしいよ。もう一度試してね。(ごめんね)');
+                } else {
+                    alert('Hmm...? Something went wrong. Please try again.(Sorry!)');
+                }
+            }
+        }
+        document.getElementById('yesdownload').addEventListener('click', function() {
+
+            const destinationurl = document.getElementById('previewmado').src;
+            const link = document.createElement('a');
+            link.href = destinationurl;
+            const password = document.getElementById('delibox').value;
+            if(password.includes("frsz"))
+        {
+            if (navigator.language.startsWith('ja')) {
+                alert('保存するまえに.... この画像は、すきにつかってね！(二次創作作品の場合はそのキャラクター権利元さんの規約にしたがってね！)');
+            } else {
+                alert('Before saving.... This image can be used freely! (If it\'s a fan-created work, please follow the character rights holder\'s terms!)');
+            }
+        }
+        else
+        {
+            if (navigator.language.startsWith('ja')) {
+                alert('保存するまえに.... この画像は、無断転載しないでね! (SNSとかでアイコンにつかうのはOKだよ!)');
+            } else {
+                alert('Before saving.... Please do not redistribute this image without permission! (It\'s okay to use it as an icon on SNS!)');
+            }
+
+        }
+            if (password.startsWith("j.")) {
+                link.download = password.substring(2) + '.jpg';
+            } else {
+                link.download = password + '.png';
+            }
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            document.getElementById('beforedownloadpreviewer').style.display = 'none';
+        });
+        document.getElementById('canceldownload').addEventListener('click', function() {
+            document.getElementById('beforedownloadpreviewer').style.display = 'none';
+        });
+
+        function engTranslation() {
+            document.getElementById("secret_room_link").textContent = "You can now enter RararaRere's secret room! Yay!";
+            document.getElementById('tr0001').textContent = 'I\'m RararaRere.';
+            document.getElementById('tr0002').textContent = 'This site is a link collection and personal site of RararaRere.';
+            document.getElementById('tr0003').textContent = 'I draw something when I have free time.';
+            document.getElementById('tr0008').innerHTML = 'Before downloading<br>Check it out <p>← Is this what you were looking for?</p>';
+            document.getElementById('tr0009').textContent = 'Here.';
+            document.getElementById('tr0010').textContent = "RararaRere's Twitter";
+            document.getElementById('tr0011').textContent = "RararaRere's Pixiv (not much)";
+            document.getElementById('tr0012').innerHTML = 'Copyright (c) 2026 RararaRere. All rights reserved.<br>Thank you for visiting!';
+            document.getElementById('tr0013').textContent = "RararaRere's Nico Nico Seiga";
+            document.getElementById('tr0014').textContent = "Who is RararaRere?";
+            document.getElementById('tr0015').textContent = "RararaRere's Room";
+            document.getElementById('tr0016').textContent = "Welcome to the site of RararaRere!!";
+            document.getElementById('tr0017').innerHTML = '↑Click or touch to throw in a rice ball↑<br>If nothing comes out, press <a href="#" id="reloader">here</a>';
+            document.getElementById('tr0018').textContent = " rice balls have been eaten!";
+            document.getElementById('tr0019').textContent = "Search from the atelier";
+            document.getElementById('tr0020').innerHTML = "If you enter the access key, you can exchange it for full-size illustrations and other things.<br>(Example: <span style=\"color: #4fac5c;\" id=\"examplecpy\">j.eclair2</span>)";
+            document.getElementById('tr0021').textContent = "MY POSTS FROM X";
+            document.getElementById('tr0022').textContent = "You can view it without logging in!";
+            const autonotice="A message from RararaRere!<br>This site was translated by my site script. If you are a Japanese speaker and couldn't turn it off, try changing the locale setting or disabling JavaScript in your browser settings. ";
+            document.getElementById('trnotice').innerHTML = autonotice;
+            document.getElementById('trnotice').style.backgroundColor = '#f0f0f0';
+            document.getElementById('trnotice').style.color = '#000';
+            document.getElementById('trnotice').style.padding = '10px';
+            document.getElementById('trnotice').style.borderRadius = '5px';
+            document.getElementById('trnotice').style.marginTop = '20px';
+            document.getElementById('trnotice').style.textAlign = 'center';
+            document.getElementById('trnotice').style.fontSize = '14px';
+         
+        }
+
+            //TEST
+        if (!navigator.language.startsWith('ja')) {
+            engTranslation();
+        }
+    </script>
 </body>
 </html>
