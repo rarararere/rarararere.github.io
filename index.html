@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ららられれ仮のお部屋</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+
+body { display: block; margin: 0; font-family: "Segoe UI", sans-serif; background-color: #0d141a; color: #fcfcfc; align-items: normal; }
+header { display: flex; justify-content: space-between; align-items: center; background-color: #121f27; padding: 15px 20px; border-bottom: 2px solid #77db84; }
+header .logo { font-size: 24px; font-weight: bold; }
+nav a { color: #fcfcfc; margin-left: 20px; text-decoration: none; }
+nav a:hover { color: #77b3db; }
+.container { display: flex; flex-direction: column; max-width: 1200px; margin: auto; padding: 20px; gap: 20px; }
+.main { flex: 3; display: flex; flex-direction: column; gap: 20px; }
+.sidebar { flex: 1; }
+.sidebar-box { background-color: #1f2e36; padding: 20px; margin-bottom: 20px; border-left: 8px solid #77b3db; box-shadow: 0px 4px 6px rgba(0,0,0,0.2); }
+.sidebar-box ul { list-style: none; padding-left: 0; }
+.sidebar-box a { color: #77db84; text-decoration: none; }
+.sidebar-box a:hover { text-decoration: underline; }
+footer { background-color: #121f27; padding: 15px; border-top: 2px solid #77db84; margin-top: 40px; justify-content:right; text-align:right; }
+a { color: #77db84; text-decoration: none; }
+@media screen and (min-width: 768px) { .container { flex-direction: row; } .sidebar { margin-left: 20px; } }
+@media screen and (max-width: 767px) { .container { padding: 10px; } nav a { margin-left: 10px; } .A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { padding: 15px; } }
+.A { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #9fdb77; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.B { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #77b3db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.C { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7777; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.D { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #c477db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.E { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #dba477; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.F { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #dbc977; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.G { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #bddb77; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.H { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #77dbba; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.I { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #7779db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.J { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7790; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.K { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7795; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.L { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f37979; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.M { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f3a679; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.N { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f3e179; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.O { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #a6f379; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.P { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79f3c4; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.Q { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79f3f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.R { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79a0f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.S { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #bc79f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.T { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f379d5; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.U { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f37993; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.V { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #5dd477; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.W { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #4069db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.X { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #ff5757; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.Y { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #32ff5e; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.Z { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f7ea3c; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+
+* { color: #423c3c; } body { background-color: #eaf0f1 !important; }
+.A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { background-color: #fbfbfb !important; }
+footer { background-color: #f0f2ef !important; } header { background-color: #e8e8e8 !important; } header a { color: #111 !important; }
+
+</style></head>
+<body class="light-theme">
+<header>
+<div class="logo">ららられれ</div>
+<nav>
+      <a href="https://rarararere.pages.dev">今のお部屋</a>
+</nav>
+</header>
+<main class="container">
+<section class="main">
+<article class="B">
+<h2>かりのおへや</h2>
+<div><p>仮のお部屋です。移行準備中!</p>
+</div>
+<p><small>2026/08/30</small></p>
+</article>
+</section>
+<aside class="sidebar">
+
+<div class="sidebar-box">
+<p><strong>現在時刻</strong></p>
+<span id="year"></span>年<span id="month"></span>月<span id="date"></span>日<span id="day"></span><br>
+<span id="hour"></span>:<span id="min"></span> <small><span id="sec"></span></small>
+</div>
+
+</aside>
+</main>
+<footer>
+<p><small>This page uses <a href="https://github.com/yokonoha/FSoverride" >FSLinear Override</a>.</small></p>
+</footer>
+<script>
+
+let errcode; document.addEventListener("DOMContentLoaded", () => {
+    setInterval((()=> {
+        let timemgr=new Date; let year=timemgr.getFullYear(); let mon=timemgr.getMonth()+1;
+        let xingqi=timemgr.getDay(); let hour=timemgr.getHours(); let min=timemgr.getMinutes();
+        let sec=timemgr.getSeconds(); let date=timemgr.getDate();
+        let decentformatofhour = (hour<10) ? "0"+hour : hour;
+        let decentformatofmin = (min<10) ? "0"+min : min;
+        let decentformatofsec = (sec<10) ? "0"+sec : sec;
+        let enday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][xingqi];
+        if(document.getElementById("year")) document.getElementById("year").innerHTML=year;
+        if(document.getElementById("month")) document.getElementById("month").innerHTML=mon;
+        if(document.getElementById("date")) document.getElementById("date").innerHTML=date;
+        if(document.getElementById("hour")) document.getElementById("hour").innerHTML=decentformatofhour;
+        if(document.getElementById("min")) document.getElementById("min").innerHTML=decentformatofmin;
+        if(document.getElementById("sec")) document.getElementById("sec").innerHTML=decentformatofsec;
+        if(document.getElementById("day")) document.getElementById("day").innerHTML=enday;
+        if(document.getElementById("ampm")) document.getElementById("ampm").innerHTML = (hour>=12) ? "PM" : "AM";
+        if(document.getElementById("hour2")) { let h12 = hour % 12; document.getElementById("hour2").innerHTML = (h12==0) ? 12 : h12; }
+    }),100);
+});
+</script>
+</body>
+</html>
