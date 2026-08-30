@@ -216,11 +216,11 @@ document.getElementById("examplecpy").addEventListener("click", function() {
             const password = document.getElementById('delibox').value;
            const urlprefix = 'https://rarararere.pages.dev/atelier/';
             let url = urlprefix + password + '.png';
-            let relurl="./atelier/"+password+".png";
+            let relurl="https://rarararere.pages.dev/atelier/"+password+".png";
             if(password.startsWith("j."))
             {
                 url = urlprefix + password.substring(2) + '.jpg';
-                relurl="./atelier/"+password.substring(2)+".jpg";
+                relurl="https://rarararere.pages.dev/atelier/"+password.substring(2)+".jpg";
             }
             try{
               
