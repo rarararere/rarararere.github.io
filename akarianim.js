@@ -16,10 +16,11 @@ let omusubi=[];
 let counter=localStorage.getItem("musubi_ate_quantity") || 0;
 document.getElementById("musubi_ate_quantity").textContent = counter;
 if (counter >= 100) {
-    document.getElementById("secret_room_link").style.display = "inline-block";
+    document.getElementById("scri").style.display = "inline-block";
+    document.getElementById("scri").innerHTML="ららられれ の ひみつのお部屋 に入れるよ!";
 
 }
-    document.getElementById("secret_room_link").addEventListener("click", function(event) {
+    document.getElementById("scri").addEventListener("click", function(event) {
         event.preventDefault();
         window.location.href = "secretofrarararere.html";
     });
@@ -119,7 +120,8 @@ function syoutotsuchk()
                 localStorage.setItem("musubi_ate_quantity", counter);
                 document.getElementById("musubi_ate_quantity").textContent = counter;
                 if (counter >= 100) {
-                    document.getElementById("secret_room_link").style.display = "inline-block";
+                    document.getElementById("scri").style.display = "inline-block";
+                    document.getElementById("scri").innerHTML="ららられれ の ひみつのお部屋 に入れるよ!";
                 }
                 re();
             }
