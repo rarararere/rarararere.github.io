@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <title>Debuging (IMPREMENTATION SAMPLE)</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --page-bg: #111318;
+      --panel-bg: #1b1e25;
+      --text: #f4f5f7;
+      --muted: #a8afbd;
+      --gap: 10px;
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--page-bg); }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--page-bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgb(17 19 24 / 90%);
+      border-bottom: 1px solid rgb(255 255 255 / 8%);
+      backdrop-filter: blur(12px);
+    }
+    h1 { margin: 0; font-size: 1rem; font-weight: 650; }
+    #status { color: var(--muted); font-size: .85rem; text-align: right; }
+    main { width: min(1600px, 100%); margin: 0 auto; padding: var(--gap); }
+    #gallery {
+      columns: 5;
+      column-gap: var(--gap);
+    }
+    .tile {
+      display: block;
+      width: 100%;
+      margin: 0 0 var(--gap);
+      padding: 0;
+      border: 0;
+      border-radius: 5px;
+      overflow: hidden;
+      background: var(--panel-bg);
+      cursor: zoom-in;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      text-align: left;
+    }
+    .tile img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 48px;
+      object-fit: contain;
+      color: transparent;
+      background: var(--panel-bg);
+    }
+    .tile:focus-visible, .close:focus-visible, #loadMore:focus-visible {
+      outline: 3px solid #8ab4ff;
+      outline-offset: 2px;
+    }
+    .tile:hover { filter: brightness(1.07); }
+    #endMessage {
+      padding: 24px 8px 32px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+    dialog {
+      width: 100vw;
+      height: 100dvh;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: rgb(0 0 0 / 94%);
+      color: white;
+    }
+    dialog::backdrop { background: rgb(0 0 0 / 90%); }
+    .modal-inner {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 54px 12px 18px;
+    }
+    #modalImage {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      background: rgb(255 255 255 / 14%);
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    #modalCaption {
+      position: absolute;
+      left: 12px;
+      top: 20px;
+      max-width: calc(100% - 80px);
+      color: #d5d8df;
+      font-size: .85rem;
+    }
+    #loadMore {
+      display: none;
+      margin: 8px auto 24px;
+      padding: 10px 18px;
+      border: 1px solid #555d6d;
+      border-radius: 8px;
+      color: var(--text);
+      background: var(--panel-bg);
+      cursor: pointer;
+    }
+    @media (max-width: 1100px) { #gallery { columns: 4; } }
+    @media (max-width: 800px) { #gallery { columns: 3; } }
+    @media (max-width: 520px) {
+      :root { --gap: 6px; }
+      header { padding: 10px 12px; }
+      main { padding: var(--gap); }
+      #gallery { columns: 2; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .tile { animation: appear .18s ease-out; }
+      @keyframes appear { from { opacity: .6; } to { opacity: 1; } }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>画像ギャラリー</h1>
+    <div id="status" role="status" aria-live="polite">読み込み準備中…</div>
+  </header>
+
+  <main>
+    <div id="gallery" aria-label="画像一覧"></div>
+    <div id="endMessage" hidden>すべての画像を読み込みました。</div>
+    <button id="loadMore" type="button">さらに読み込む</button>
+  </main>
+
+  <dialog id="viewer" aria-label="画像の拡大表示">
+    <div class="modal-inner">
+      <div id="modalCaption"></div>
+      <button class="close" id="closeModal" type="button" aria-label="閉じる">×</button>
+      <img id="modalImage" alt="">
+    </div>
+  </dialog>
+
+  <script>
+
+    const IMAGE_BASE_URL = "https://rarararere.pages.dev/res/imgs/";
+    const IMAGE_EXTENSION = ".png";
+    const START_NUMBER = 1;
+    const NUMBER_PADDING = 4;
+
+
+    const BATCH_SIZE = 12;
+    const REQUEST_TIMEOUT_MS = 15000;
+
+    const gallery = document.querySelector("#gallery");
+    const status = document.querySelector("#status");
+    const endMessage = document.querySelector("#endMessage");
+    const loadMoreButton = document.querySelector("#loadMore");
+    const viewer = document.querySelector("#viewer");
+    const modalImage = document.querySelector("#modalImage");
+    const modalCaption = document.querySelector("#modalCaption");
+    const closeModal = document.querySelector("#closeModal");
+
+    let nextNumber = START_NUMBER;
+    let isLoading = false;
+    let isFinished = false;
+    let totalLoaded = 0;
+
+    function imageUrl(number) {
+      const filename = String(number).padStart(NUMBER_PADDING, "0") + IMAGE_EXTENSION;
+      return IMAGE_BASE_URL + filename;
+    }
+
+    async function checkImage(number) {
+      const url = imageUrl(number);
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          mode: "cors",
+          signal: controller.signal,
+          cache: "default"
+        });
+
+        if (response.status === 404) {
+          return { kind: "missing", number };
+        }
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status} (${number})`);
+        }
+
+        const blob = await response.blob();
+        if (!blob.type.startsWith("image/") && blob.size === 0) {
+          throw new Error(`画像データが空です (${number})`);
+        }
+        return { kind: "found", number, blob };
+      } catch (error) {
+        if (error.name === "AbortError") {
+          throw new Error(`画像 ${number} の確認がタイムアウトしました`);
+        }
+        if (error instanceof TypeError) {
+          throw new Error(
+            `画像 ${number} を取得できません。CORS設定、URL、ネットワークを確認してください。`
+          );
+        }
+        throw error;
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
+
+    function addImage(number, blob) {
+      const url = URL.createObjectURL(blob);
+      const button = document.createElement("button");
+      button.className = "tile";
+      button.type = "button";
+      button.setAttribute("aria-label", `${String(number).padStart(NUMBER_PADDING, "0")}.png を拡大`);
+
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = `${String(number).padStart(NUMBER_PADDING, "0")}.png`;
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      button.append(img);
+      button.addEventListener("click", () => {
+        modalImage.src = url;
+        modalImage.alt = img.alt;
+        modalCaption.textContent = img.alt;
+        if (typeof viewer.showModal === "function") {
+          viewer.showModal();
+        } else {
+          viewer.setAttribute("open", "");
+        }
+      });
+      gallery.append(button);
+      totalLoaded++;
+    }
+
+    async function loadBatch() {
+      if (isLoading || isFinished) return;
+      isLoading = true;
+      loadMoreButton.style.display = "none";
+      status.textContent = `${totalLoaded} 枚表示中…`;
+
+      let checkedThisBatch = 0;
+      try {
+        while (checkedThisBatch < BATCH_SIZE && !isFinished) {
+          const number = nextNumber;
+          const result = await checkImage(number);
+          checkedThisBatch++;
+          if (result.kind === "missing") {
+            isFinished = true;
+            endMessage.hidden = false;
+            status.textContent = `${totalLoaded} 枚`;
+            break;
+          }
+          addImage(result.number, result.blob);
+          nextNumber++;
+          status.textContent = `${totalLoaded} 枚読み込み済み`;
+        }
+
+        if (!isFinished) {
+          loadMoreButton.style.display = "block";
+          status.textContent = `${totalLoaded} 枚読み込み済み`;
+        }
+      } catch (error) {
+        status.textContent = "読み込みエラー";
+        loadMoreButton.textContent = "再試行";
+        loadMoreButton.style.display = "block";
+        console.error(error);
+        alert(
+          `${error.message}\n\n画像サーバーのCORS設定と、URLがブラウザーから取得できることを確認してください。`
+        );
+      } finally {
+        isLoading = false;
+      }
+    }
+
+    loadMoreButton.addEventListener("click", () => {
+      loadMoreButton.textContent = "さらに読み込む";
+      loadBatch();
+    });
+
+    closeModal.addEventListener("click", () => {
+      if (typeof viewer.close === "function") viewer.close();
+      else viewer.removeAttribute("open");
+    });
+
+    viewer.addEventListener("click", (event) => {
+      if (event.target === viewer) {
+        if (typeof viewer.close === "function") viewer.close();
+        else viewer.removeAttribute("open");
+      }
+    });
+
+    viewer.addEventListener("close", () => {
+      modalImage.removeAttribute("src");
+    });
+
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.height = "1px";
+    document.querySelector("main").append(sentinel);
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) loadBatch();
+    }, { rootMargin: "900px 0px" });
+    observer.observe(sentinel);
+
+    loadBatch();
+  </script>
+</body>
+</html>
