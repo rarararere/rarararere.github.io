@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111318">
-  <title>Debuging (IMPREMENTATION SAMPLE)</title>
+  <title>ららられれのイラスト集 - ららられれのお部屋</title>
   <style>
     :root {
       color-scheme: dark;
@@ -152,14 +152,14 @@
 </head>
 <body>
   <header>
-    <h1>画像ギャラリー</h1>
-    <div id="status" role="status" aria-live="polite">読み込み準備中…</div>
+    <h1>ららられれのイラスト集</h1>
+    <div id="status" role="status" aria-live="polite">ちょっとまっててね…</div>
   </header>
 
   <main>
     <div id="gallery" aria-label="画像一覧"></div>
-    <div id="endMessage" hidden>すべての画像を読み込みました。</div>
-    <button id="loadMore" type="button">さらに読み込む</button>
+    <div id="endMessage" hidden>ぜんぶもってこれたよ!</div>
+    <button id="loadMore" type="button">もっとみてみる</button>
   </main>
 
   <dialog id="viewer" aria-label="画像の拡大表示">
@@ -178,7 +178,7 @@
     const NUMBER_PADDING = 4;
 
 
-    const BATCH_SIZE = 12;
+    const BATCH_SIZE = 24;
     const REQUEST_TIMEOUT_MS = 15000;
 
     const gallery = document.querySelector("#gallery");
@@ -222,16 +222,16 @@
 
         const blob = await response.blob();
         if (!blob.type.startsWith("image/") && blob.size === 0) {
-          throw new Error(`画像データが空です (${number})`);
+          throw new Error(`画像データがないよ (${number})`);
         }
         return { kind: "found", number, blob };
       } catch (error) {
         if (error.name === "AbortError") {
-          throw new Error(`画像 ${number} の確認がタイムアウトしました`);
+          throw new Error(`画像 ${number} の確認ができなかったよ...ネットワークを確認してね。`);
         }
         if (error instanceof TypeError) {
           throw new Error(
-            `画像 ${number} を取得できません。CORS設定、URL、ネットワークを確認してください。`
+            `画像 ${number} を取得できなかったよ。CORS設定、URL、ネットワークを確認してね!`
           );
         }
         throw error;
@@ -301,7 +301,7 @@
         loadMoreButton.style.display = "block";
         console.error(error);
         alert(
-          `${error.message}\n\n画像サーバーのCORS設定と、URLがブラウザーから取得できることを確認してください。`
+          `${error.message}\n\n画像サーバーとただしく接続できなかったみたい。ごめんね。`
         );
       } finally {
         isLoading = false;
@@ -309,7 +309,7 @@
     }
 
     loadMoreButton.addEventListener("click", () => {
-      loadMoreButton.textContent = "さらに読み込む";
+      loadMoreButton.textContent = "もっとみてみる";
       loadBatch();
     });
 
