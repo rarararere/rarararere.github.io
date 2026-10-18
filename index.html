@@ -43,7 +43,6 @@
       flex-direction: column;
       justify-content: center;
         align-items: center;
-        overflow-x: hidden;
     }
     #header {
         display: flex;
@@ -94,6 +93,12 @@
       margin-top: 20px;
       border-radius: 5px;
     }
+        #form
+    {
+    width: 100%;
+    background-color:white;
+    max-width: 600px; margin-top: 20px; border-radius: 5px;
+    }
     </style>
 </head>
 <body>
@@ -107,8 +112,10 @@
     <p id="tr0016" style="width: 100%; text-align: center;">ららられれのお部屋へようこそ!</p>
 </div>
   </div>   
-  <!--改修時のみDSP-->
+  <!--改修時のみDSP
   <img src="./renewalbanner.png" alt="リニューアルバナー" style="width: 100%;max-width: 600px; margin-top: 20px; border-radius: 5px;">
+-->
+  <img src="./bnr2026q4.png" alt="バナー画像2026Q2" style="width: 100%;max-width: 600px; margin-top: 20px; border-radius: 5px;">
 
   <div id="trnotice"></div>
 
@@ -133,15 +140,7 @@
      <p><span id="musubi_ate_quantity">0</span><span id="tr0018">個のおむすびを食べたよ!</span></p>
      <a href="#" id="scri" style="display: none; padding: 10px 20px; background-color: #4ee453; color: white; text-decoration: none; border-radius: 5px;"></a>
 <script src="./akarianim.js"></script>
-          <div id="beforedownloadpreviewer" style="z-index:7777; position:sticky; display: none; flex-direction: column; top: 30%;bottom: 50%;background-color: rgb(255, 255, 255);border-radius: 5px;border-style: solid;">
-        <div style="display: flex; flex-direction: row; align-items: center; padding: 10px;">
-        <h3 id="tr0008">ダウンロード前の<br>かくにん <p>← 探してたのって<br>これであってたかな?</p></h3>
-       </div>
-      <div style="display: flex; align-items: center; justify-content: space-around; padding: 10px;">
-        <div id="yesdownload" style="padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px; cursor: pointer;">これだよ!</div>
-        <div id="canceldownload" style="padding: 10px 20px; background-color: #e2746d; color: white; border-radius: 5px; cursor: pointer;">やっぱやめる</div>
-      </div>
-      </div>
+
 
 <div style="justify-content: center; align-items: center;text-align: center; background-color: #e1edc3;padding: 10px;margin: 10px;border-radius: 5px;">
  <div style="display: flex;align-items: center;"><img src="./rararere.jpg" alt="おばけみたいなおさかな らられれちゃん" style="border-radius: 50%; width: 150px; height: 150px; margin-top: 20px;background-color: white; border-style: solid; ">
@@ -158,30 +157,39 @@
 <img src="./kw.jpg" alt="あいこんの子 と おばけみたいなおさかなのらられれちゃん" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 5px;">
 
   
-<div id="links">
-    
-    <ul>
-        <li><a href="https://rarararere.github.io" id="tr0009">ここ。</a></li>
-        <li><a href="./rarararere.html" id="tr0014">ららられれ って?</a></li>
-        <li><a href="https://x.com/Rarararere1" id="tr0010">ららられれのついったー</a></li>
-        <li><a href="https://www.pixiv.net/users/125923702" id="tr0011">ららられれのぴくしぶ(あんまりないよ)</a></li>
-        </ul>
-</div>  
+
   <div id="links"><h2>LINKS</h2>
-    <a href="./3d.html">
-      <img src="./3dclub.png" style="width: 35vw; max-width: 200px;min-width: 100px;" alt="ららられれの3D部!">
-        <p>ららられれの3Dぶ!</p>
-    </a>
-    <p>イラストではなく3Dモデルをつかったアートが見たい方はこっち!!</p>
-    <a href="https://yokonoha.github.io/"><img src="https://yokonoha.github.io/yokohabanner.png" style="width: 35vw; max-width: 200px;min-width: 100px;" alt="さいとをせっけいしたひと">
-        <p>このさいとを設計したひとのホームページ</p>
-    </a>
+<a href="https://x.com/Rararere1" style="text-decoration: none; color: #ff3b30;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerex.jpg" alt="ららられれ の ツイッター" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれのTwitter(X) <br> イラストたくさんかいてるよ!</p>
+</div></a>
+<a href="https://x.com/Rararere_" style="text-decoration: none; color: #007aff;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rararere.jpg" alt="らられれちゃん の ツイッター" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>らられれちゃん(X) <br> 絵と関係ない日常はこっち!</p>
+</div></a>
+<a href="https://www.pixiv.net/users/125923702" style="text-decoration: none; color: #ffcc00;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerepix.jpg" alt="ららられれ の pixiv" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれのぴくしぶ <br> (あんまりないよ)</p>
+</div></a>
+<a href="./3d.html" style="text-decoration: none; color: #ff3b30;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./3darts.jpg" alt="ららられれ の 3D部!" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれの3D部! <br> 3Dモデルをつかったアートが見たい方はこっち!</p>
+</div></a>
+<a href="https://bsky.app/profile/rarararere.bsky.social" style="text-decoration: none; color: #007aff;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerebsk.webp" alt="ららられれ の BlueSky" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれの落書き帳(BlueSky) <br> 没作の供養をやってるよ</p>
+</div></a>
+<a href="https://www.pixiv.net/users/125923702" style="text-decoration: none; color: #ffcc00;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararereist.png" alt="ららられれ の インスタ" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれのインスタ <br>いまはおやすみ中! でもいつか つかう かも!</p>
+</div></a>
   </div>
   <!--設計 (c) 2026 Y.Yokoha! (Copying, Archiving and Scraping are prohibited.) サイト (c) 2026 Rarararere All Rights Reserved.-->
   <!--フッターセクション-->
     <div id="footer">
         <img src="https://rarararere.pages.dev/res/thankssgn.png" alt="ららられれからのありがとう" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 6px;border-style:solid;"><br>
         <p id="tr0012">Copyright &copy; 2026 ららられれ. All rights reserved.<br>見に来てくれてありがとう!</p>
+
     </div>
     <script>
         function updateTime() {
@@ -225,147 +233,6 @@
            updateTime();
         }
 
-document.getElementById("examplecpy").addEventListener("click", function() {
-    const exampleText = document.getElementById("examplecpy").textContent;
-    navigator.clipboard.writeText(exampleText).then(function() {
-        if (navigator.language.startsWith('ja')) {
-            alert("コピーしたよ! 貼り付けてつかってみてね: " + exampleText);
-        } else {
-            alert("Copied! Try pasting it: " + exampleText);
-        }
-    }, function(err) {
-        if (navigator.language.startsWith('ja')) {
-            alert("コピーできなかったよ、ごめんね: 非対応 なのかも。");
-        } else {
-            alert("Could not copy, sorry: It might not be supported.");
-        }
-    });
-});
-
-
-        document.getElementById("delibox").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault();
-                moveToPage();
-            }
-        });
-
-        function moveToPage() {
-            const password = document.getElementById('delibox').value;
-           const urlprefix = 'https://rarararere.pages.dev/atelier/';
-            let url = urlprefix + password + '.png';
-            let relurl="https://rarararere.pages.dev/atelier/"+password+".png";
-            if(password.startsWith("j."))
-            {
-                url = urlprefix + password.substring(2) + '.jpg';
-                relurl="https://rarararere.pages.dev/atelier/"+password.substring(2)+".jpg";
-            }
-            try{
-              
-                fetch(url, { method: 'HEAD' })
-                    .then(response => {
-                        if (response.ok) {
-                            document.getElementById('beforedownloadpreviewer').style.display = 'flex';
-                            document.getElementById('previewmado').src = relurl;
-
-                        } else {
-                            if (navigator.language.startsWith('ja')) {
-                                alert('あれれ...? ファイルがなかったよ。 パスワードをもう一度確認してね。(ごめんね)');
-                            } else {
-                                alert('Hmm...? The file was not found. Please check the password again.(Sorry!)');
-                            }
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        if (navigator.language.startsWith('ja')) {
-                            alert('あれれ..? 通信えらーだよ? もう一度試してね。(ごめんね)');
-                        } else {
-                            alert('Hmm...? There was a communication error. Please try again.(Sorry!)');
-                        }
-                    });
-            } catch (error) {
-                console.error('Error:', error);
-                if (navigator.language.startsWith('ja')) {
-                    alert('あれれ...? 何かがおかしいよ。もう一度試してね。(ごめんね)');
-                } else {
-                    alert('Hmm...? Something went wrong. Please try again.(Sorry!)');
-                }
-            }
-        }
-        document.getElementById('yesdownload').addEventListener('click', function() {
-
-            const destinationurl = document.getElementById('previewmado').src;
-            const link = document.createElement('a');
-            link.href = destinationurl;
-            const password = document.getElementById('delibox').value;
-            if(password.includes("frsz"))
-        {
-            if (navigator.language.startsWith('ja')) {
-                alert('保存するまえに.... この画像は、すきにつかってね！(二次創作作品の場合はそのキャラクター権利元さんの規約にしたがってね！)');
-            } else {
-                alert('Before saving.... This image can be used freely! (If it\'s a fan-created work, please follow the character rights holder\'s terms!)');
-            }
-        }
-        else
-        {
-            if (navigator.language.startsWith('ja')) {
-                alert('保存するまえに.... この画像は、無断転載しないでね! (SNSとかでアイコンにつかうのはOKだよ!)');
-            } else {
-                alert('Before saving.... Please do not redistribute this image without permission! (It\'s okay to use it as an icon on SNS!)');
-            }
-
-        }
-            if (password.startsWith("j.")) {
-                link.download = password.substring(2) + '.jpg';
-            } else {
-                link.download = password + '.png';
-            }
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            document.getElementById('beforedownloadpreviewer').style.display = 'none';
-        });
-        document.getElementById('canceldownload').addEventListener('click', function() {
-            document.getElementById('beforedownloadpreviewer').style.display = 'none';
-        });
-
-        function engTranslation() {
-            document.getElementById("secret_room_link").textContent = "You can now enter RararaRere's secret room! Yay!";
-            document.getElementById('tr0001').textContent = 'I\'m RararaRere.';
-            document.getElementById('tr0002').textContent = 'This site is a link collection and personal site of RararaRere.';
-            document.getElementById('tr0003').textContent = 'I draw something when I have free time.';
-            document.getElementById('tr0008').innerHTML = 'Before downloading<br>Check it out <p>← Is this what you were looking for?</p>';
-            document.getElementById('tr0009').textContent = 'Here.';
-            document.getElementById('tr0010').textContent = "RararaRere's Twitter";
-            document.getElementById('tr0011').textContent = "RararaRere's Pixiv (not much)";
-            document.getElementById('tr0012').innerHTML = 'Copyright (c) 2026 RararaRere. All rights reserved.<br>Thank you for visiting!';
-            document.getElementById('tr0013').textContent = "RararaRere's Nico Nico Seiga";
-            document.getElementById('tr0014').textContent = "Who is RararaRere?";
-            document.getElementById('tr0015').textContent = "RararaRere's Room";
-            document.getElementById('tr0016').textContent = "Welcome to the site of RararaRere!!";
-            document.getElementById('tr0017').innerHTML = '↑Click or touch to throw in a rice ball↑<br>If nothing comes out, press <a href="#" id="reloader">here</a>';
-            document.getElementById('tr0018').textContent = " rice balls have been eaten!";
-            document.getElementById('tr0019').textContent = "Search from the atelier";
-            document.getElementById('tr0020').innerHTML = "If you enter the access key, you can exchange it for full-size illustrations and other things.<br>(Example: <span style=\"color: #4fac5c;\" id=\"examplecpy\">j.eclair2</span>)";
-            document.getElementById('tr0021').textContent = "MY POSTS FROM X";
-            document.getElementById('tr0022').textContent = "You can view it without logging in!";
-            const autonotice="A message from RararaRere!<br>This site was translated by my site script. If you are a Japanese speaker and couldn't turn it off, try changing the locale setting or disabling JavaScript in your browser settings. ";
-            document.getElementById('trnotice').innerHTML = autonotice;
-            document.getElementById('trnotice').style.backgroundColor = '#f0f0f0';
-            document.getElementById('trnotice').style.color = '#000';
-            document.getElementById('trnotice').style.padding = '10px';
-            document.getElementById('trnotice').style.borderRadius = '5px';
-            document.getElementById('trnotice').style.marginTop = '20px';
-            document.getElementById('trnotice').style.textAlign = 'center';
-            document.getElementById('trnotice').style.fontSize = '14px';
-         
-        }
-
-            //TEST
-        if (!navigator.language.startsWith('ja')) {
-            //engTranslation();
-        }
     </script>
 </body>
 </html>
