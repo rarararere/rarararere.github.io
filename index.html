@@ -46,7 +46,7 @@
     }
     #header {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
         border-bottom: solid;
         align-items: center;
@@ -97,21 +97,47 @@
     {
     width: 100%;
     background-color:white;
-    max-width: 600px; margin-top: 20px; border-radius: 5px;
+     margin-top: 20px; border-radius: 5px;
     }
+    body { display: block; margin: 0; font-family: "Segoe UI", sans-serif; background-color: #0d141a; color: #423c3c; align-items: center; }
+header { display: flex; justify-content: space-between; align-items: center; background-color: #121f27; padding: 15px 20px; border-bottom: 2px solid #77db84; }
+header .logo { font-size: 24px; font-weight: bold; }
+nav a { color: #fcfcfc; margin-left: 20px; text-decoration: none; }
+nav a:hover { color: #77b3db; }
+.container { display: flex; flex-direction: column; max-width: 1200px; margin: auto; padding: 20px; gap: 20px; }
+.main { flex: 3; display: flex; flex-direction: column; gap: 20px; }
+.sidebar { flex: 1; }
+.sidebar-box { background-color: #1f2e36; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0,0,0,0.2); }
+.sidebar-box ul { list-style: none; padding-left: 0; }
+.sidebar-box a { color: #77db84; text-decoration: none; }
+.sidebar-box a:hover { text-decoration: underline; }
+footer { background-color: #121f27; padding: 15px; border-top: 2px solid #77db84; margin-top: 40px; justify-content:right; text-align:right; }
+a { color: #77db84; text-decoration: none; }
+@media screen and (min-width: 768px) { .container { flex-direction: row; } .sidebar { margin-left: 20px; } }
+@media screen and (max-width: 767px) { .container { padding: 10px; } nav a { margin-left: 10px; } .A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { padding: 15px; } }
+.B { padding: 20px; background-color: #121f27; border: 5px solid #fcfcfc; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 5px; border-radius: 10px;}
+
+body { background-color: #eaf0f1 !important; }
+.A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { background-color: #fbfbfb !important;}
+footer { background-color: #f0f2ef !important; } header { background-color: #e8e8e8 !important; } header a { color: #111 !important; }
     </style>
 </head>
 <body>
 
-  <div id="header">
+  <header id="header">
     <img src="https://rarararere.pages.dev/res/1.png" alt="ぷろふぃーるのがぞう" style="border-radius: 50%; width: 150px; height: 150px; margin-top: 20px;background-color: white; border-style: solid;">
     <div>
         <div style="display: flex; align-items: last baseline; margin: 10px;">
     <div class="raradots"><span class="raradot1"></span><span class="raradot2"></span><span class="raradot3"></span></div>
             <h1 id="tr0015" style="border-bottom: dashed;"><span style="color: #ff3b30;">R</span>arara<span style="color: #007aff;">R</span>ere<span style="color: #ffcc00;">!</span></h1><div class="raradots"><span class="raradot1"></span><span class="raradot2"></span><span class="raradot3"></span></div></div>
     <p id="tr0016" style="width: 100%; text-align: center;">ららられれのお部屋へようこそ!</p>
-</div>
-  </div>   
+        </header>
+
+        <!--Powered by FSoverrideCSS-->
+ <main class="container">
+    <section class="main" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+   
   <!--改修時のみDSP-->
   <img src="./renewalbanner.png" alt="リニューアルバナー" style="width: 100%;max-width: 600px; margin-top: 20px; border-radius: 5px;">
 
@@ -124,12 +150,14 @@
         <div style="justify-content: center; align-items: center;text-align: center; background-color: #e1edc3;padding: 10px;margin: 10px;border-radius: 5px;">
         <h2><span id="time">こんにちは。</span>  <span id="tr0001">ららられれ です。</span></h2>
         <p id="tr0002">このサイトは、ららられれのリンク集 兼 個人サイトです。</p>
-        <p id="tr0003">ひまなときに なにか 絵をかいてます。<br>一次創作とかキャラクターデザインが大好き。<br>でも、ボイロとか二次創作もとってもすきなので、ゆかりさんとかよくかいてます。<br><br>いまの目標は、なんかすっごいまんがを作ること!! です。</p>
+        <p id="tr0003">ひまなときに なにか 絵をかいてます。<br>一次創作とかキャラクターデザインが大好き。<br>
+          でも、ボイロとか二次創作もとってもすきなので、ゆかりさんとかよくかいてます。
+          <br><br>いまの目標は、なんかすっごいまんがを作ること!! です。</p>
     
             </div>
     </div>
 
-    </div><canvas id="form"></canvas>
+    <canvas id="form"></canvas>
     <p><small id="tr0017">↑クリックorタッチでおむすび投入↑<br>何も出てこないときは<a href="#" id="reloader">ここ</a>を押してね</small></p>
     <script>
         document.getElementById("reloader").addEventListener("click", function(event) {
@@ -141,59 +169,64 @@
      <a href="#" id="scri" style="display: none; padding: 10px 20px; background-color: #4ee453; color: white; text-decoration: none; border-radius: 5px;"></a>
 <script src="./akarianim.js"></script>
 
+<img src="./kw.jpg" alt="あいこんの子 と おばけみたいなおさかなのらられれちゃん" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 5px;">
 
-<div style="justify-content: center; align-items: center;text-align: center; background-color: #e1edc3;padding: 10px;margin: 10px;border-radius: 5px;">
- <div style="display: flex;align-items: center;"><img src="./rararere.jpg" alt="おばけみたいなおさかな らられれちゃん" style="border-radius: 50%; width: 150px; height: 150px; margin-top: 20px;background-color: white; border-style: solid; ">
+    </section>
 
-    <h2>らられれちゃんって?</h2></div>
+    <aside class="sidebar">
+      <div class="sidebar-box">
+       <div id="links"><h2>LINKS</h2>
+<a href="https://x.com/Rarararere1" style="text-decoration: none; color: #ff3b30 !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerex.jpg" alt="ららられれ の ツイッター" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれのTwitter(X) <br> イラストたくさんかいてるよ!</p>
+</div></a>
+<a href="https://x.com/Rarararere_" style="text-decoration: none; color: #007aff !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rararere.jpg" alt="らられれちゃん の ツイッター" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>らられれちゃん(X) <br> 絵と関係ない日常はこっち!</p>
+</div></a>
+<a href="https://www.pixiv.net/users/125923702" style="text-decoration: none; color: #ffcc00 !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerepix.jpg" alt="ららられれ の pixiv" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれのぴくしぶ <br> (あんまりないよ)</p>
+</div></a>
+<a href="./3d.html" style="text-decoration: none; color: #ff3b30 !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./3darts.jpg" alt="ららられれ の 3D部!" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれの3D部! <br> 3Dモデルをつかったアートが見たい方はこっち!</p>
+</div></a>
+<a href="https://bsky.app/profile/rarararere.bsky.social" style="text-decoration: none; color: #007aff !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerebsk.webp" alt="ららられれ の BlueSky" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれの落書き帳(BlueSky) <br> 没作の供養をやってるよ</p>
+</div></a>
+<a href="https://instagram.com/rarara.rere" style="text-decoration: none; color: #ffcc00 !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararereist.png" alt="ららられれ の インスタ" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれのインスタ <br>いまはおやすみ中! でもいつか つかう かも!</p>
+</div></a>
+
+<a href="#" style="text-decoration: none; color: #ff3b30 !important;">
+<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararereist.png" alt="ららられれ 技術部!(準備中)" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
+<p>ららられれの技術ぶ！ <br>前の趣味をここにもちょっぴり!</p>
+</div></a>
+  </div>
+      </div>
+      <div class="sidebar-box">
+      <img src="./rararere.jpg" alt="おばけみたいなおさかな らられれちゃん" style="border-radius: 50%; width: 150px; height: 150px; margin-top: 20px;background-color: white; border-style: solid; ">
+
+    <h2>らられれちゃんって?</h2>
 <p>ららられれのサインから生まれた おばけみたいな おさかな。</p>
 <p>おさかなだけど、そらをとべるよ。</p>
 <p>おさかなだけど、おててがあるよ。</p>
 <p>おさかなだから、おひれがあるよ。</p>
 <p>おさかなだから、えびがだいすき。</p>
 <p>たまにスマートフォンを食べるよ。</p>
-
-</div>
-<img src="./kw.jpg" alt="あいこんの子 と おばけみたいなおさかなのらられれちゃん" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 5px;">
-
+      </div>
+      </aside>
+  </main>
   
-
-  <div id="links"><h2>LINKS</h2>
-<a href="https://x.com/Rarararere1" style="text-decoration: none; color: #ff3b30;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerex.jpg" alt="ららられれ の ツイッター" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>ららられれのTwitter(X) <br> イラストたくさんかいてるよ!</p>
-</div></a>
-<a href="https://x.com/Rarararere_" style="text-decoration: none; color: #007aff;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./rararere.jpg" alt="らられれちゃん の ツイッター" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>らられれちゃん(X) <br> 絵と関係ない日常はこっち!</p>
-</div></a>
-<a href="https://www.pixiv.net/users/125923702" style="text-decoration: none; color: #ffcc00;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerepix.jpg" alt="ららられれ の pixiv" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>ららられれのぴくしぶ <br> (あんまりないよ)</p>
-</div></a>
-<a href="./3d.html" style="text-decoration: none; color: #ff3b30;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./3darts.jpg" alt="ららられれ の 3D部!" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>ららられれの3D部! <br> 3Dモデルをつかったアートが見たい方はこっち!</p>
-</div></a>
-<a href="https://bsky.app/profile/rarararere.bsky.social" style="text-decoration: none; color: #007aff;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararerebsk.webp" alt="ららられれ の BlueSky" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>ららられれの落書き帳(BlueSky) <br> 没作の供養をやってるよ</p>
-</div></a>
-<a href="https://instagram.com/rarara.rere" style="text-decoration: none; color: #ffcc00;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararereist.png" alt="ららられれ の インスタ" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>ららられれのインスタ <br>いまはおやすみ中! でもいつか つかう かも!</p>
-</div></a>
-
-<a href="#" style="text-decoration: none; color: #ff3b30;">
-<div style="display: flex;align-items: center;text-align: left;"><img src="./rarararereist.png" alt="ららられれ 技術部!(準備中)" style="border-radius: 50%; width: 80px; height: 80px; background-color: white; border-style: solid; ">
-<p>ららられれの技術ぶ！ <br>前の趣味をここにもちょっぴり!</p>
-</div></a>
-  </div>
-  <!--設計 (c) 2026 Y.Yokoha! (Copying, Archiving and Scraping are prohibited.) サイト (c) 2026 Rarararere All Rights Reserved.-->
+  <!--設計 (c) 2026 rarararere (Copying, Archiving and Scraping are prohibited.) サイト (c) 2026 Rarararere All Rights Reserved.-->
   <!--フッターセクション-->
     <div id="footer">
         <img src="https://rarararere.pages.dev/res/thankssgn.png" alt="ららられれからのありがとう" style="width: 100%; max-width: 600px; margin-top: 20px; border-radius: 6px;border-style:solid;"><br>
         <p id="tr0012">Copyright &copy; 2026 ららられれ. All rights reserved.<br>見に来てくれてありがとう!</p>
+        <p><small>This page partially uses <a href="https://github.com/yokonoha/FSoverride" >FSLinear Override</a> as a component.</small></p>
 
     </div>
     <script>
