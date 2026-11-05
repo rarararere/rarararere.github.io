@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ららられれの技術ぶ  - ららられれのお部屋</title>
+<style>
+
+body { display: block; margin: 0; font-family: "Segoe UI", sans-serif; background-color: #0d141a; color: #fcfcfc; align-items: normal; }
+header { display: flex; justify-content: space-between; align-items: center; background-color: #121f27; padding: 15px 20px; border-bottom: 2px solid #77db84; }
+header .logo { font-size: 24px; font-weight: bold; }
+nav a { color: #fcfcfc; margin-left: 20px; text-decoration: none; }
+nav a:hover { color: #77b3db; }
+.container { display: flex; flex-direction: column; max-width: 1200px; margin: auto; padding: 20px; gap: 20px; }
+.main { flex: 3; display: flex; flex-direction: column; gap: 20px; }
+.sidebar { flex: 1; }
+.sidebar-box { background-color: #1f2e36; padding: 20px; margin-bottom: 20px; border-left: 8px solid #77b3db; box-shadow: 0px 4px 6px rgba(0,0,0,0.2); }
+.sidebar-box ul { list-style: none; padding-left: 0; }
+.sidebar-box a { color: #77db84; text-decoration: none; }
+.sidebar-box a:hover { text-decoration: underline; }
+footer { background-color: #121f27; padding: 15px; border-top: 2px solid #77db84; margin-top: 40px; justify-content:right; text-align:right; }
+a { color: #77db84; text-decoration: none; }
+@media screen and (min-width: 768px) { .container { flex-direction: row; } .sidebar { margin-left: 20px; } }
+@media screen and (max-width: 767px) { .container { padding: 10px; } nav a { margin-left: 10px; } .A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { padding: 15px; } }
+.A { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #9fdb77; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.B { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #77b3db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.C { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7777; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.D { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #c477db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.E { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #dba477; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.F { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #dbc977; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.G { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #bddb77; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.H { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #77dbba; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.I { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #7779db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.J { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7790; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.K { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #db7795; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.L { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f37979; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.M { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f3a679; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.N { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f3e179; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.O { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #a6f379; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.P { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79f3c4; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.Q { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79f3f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.R { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #79a0f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.S { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #bc79f3; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.T { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f379d5; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.U { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f37993; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.V { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #5dd477; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.W { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #4069db; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.X { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #ff5757; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.Y { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #32ff5e; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+.Z { padding: 20px; background-color: #121f27; border: 1px solid #fcfcfc; border-left: 15px solid #f7ea3c; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); margin: 0; }
+
+* { color: #423c3c; } body { background-color: #eaf0f1 !important; }
+.A, .B, .C, .D, .E, .F, .G, .H, .I, .J, .K, .L, .M, .N, .O, .P, .Q, .R, .S, .T, .U, .V, .W, .X, .Y, .Z, .sidebar-box { background-color: #fbfbfb !important; }
+footer { background-color: #f0f2ef !important; } header { background-color: #e8e8e8 !important; } header a { color: #111 !important; }
+        #form
+    {
+    width: 100%;
+    background-color:white;
+    max-width: 600px; margin-top: 20px; border-radius: 5px;
+    }
+</style></head>
+<body class="light-theme">
+<header>
+<div class="logo">技術ぶのお部屋 ╹v╹</div>
+<nav>
+      <a href="./index.html">メイン</a>
+</nav>
+</header>
+<main class="container">
+<section class="main">
+<article class="B">
+<h2>ららられれの技術ぶ</h2>
+<div><p>イラストを描くまえは開発をしてたので、こっちにもちょっぴり持ってきました!</p>
+<p>""ららられれのサイト、実は ぜんぶ手作り !""</p>
+<br>
+<h3>トップページにあるあかりちゃんおにぎりスライダー</h3>
+<canvas id="form"></canvas>
+<script src="./demo.js"></script>
+<p>ボイロの「紲星あかり」ちゃんが無限におにぎりを食べる飾りです～。</p>
+<p>中身をおいておきます～ サイトとかにつかいたい方は どうぞ～╹v╹ﾉｼ</p>
+<div style="background-color: #fdd8d8; color: #000; padding: 10px; border-radius: 5px; overflow-x: auto;">
+    <small>╹v╹<b>権利表記と利用時のおねがい</b>╹v╹</small><br>
+    <small>"紲星あかり"は、株式会社バンピーファクトリーの登録商標です。<br>このページにて紹介されているプログラムは二次創作ガイドラインに準拠して個人によって作成された二次創作物です。</small>
+    <br><small>このプログラムは完全に無保証にて提供しています。ご利用は利用者様自身の責任で、コードの利用には十分注意してご利用ください。</small>
+</div>
+    <p>コードA(アニメーションと自動スペーシング)</p>
+<pre style="background-color: #f0f0f0; color: #000; padding: 10px; border-radius: 5px; overflow-x: auto;">
+    ///////////////////////////////////
+/// あかりちゃんおむすびスライダー ///
+///     Made by Rarararere      ///
+///     Based on Anzu-Widget    ///
+///////////////////////////////////
+// The Original Version(Anzu-Widget) 
+// is licensed under MIT License.
+
+
+window.addEventListener("DOMContentLoaded", () => {
+const canvas=document.getElementById("form");
+const cx1=canvas.getContext("2d");
+let changeimginterval;
+let ginterval;
+let omusubi=[];
+let counter=localStorage.getItem("omusubi_ate_quantity") || 0;
+    
+const akarichansizeyoko=100;
+const akarichansizetate=100;
+
+const futsu=new Image();
+futsu.src="1.png";
+
+const oisii=new Image();
+oisii.src="2.png";
+let omusubiX=0;
+let omusubiY=0;
+let omusubistate=futsu;
+class omusubimk
+{
+    constructor()
+    {
+        this.width=40;
+        this.height=40;
+        this.x=canvas.width;
+        this.y=15;
+        this.speed=6;
+        this.image=new Image();
+        this.image.src="omusubi.png"
+    }
+    update()
+    {    
+    this.x-=this.speed;
+    }
+    draw()
+    {
+    cx1.drawImage(this.image,this.x,this.y,this.width,this.height);
+    }
+    }
+
+    function gen_omusubi()
+    {
+        omusubi.push(new omusubimk());
+    }
+
+ function updateomusubi()
+{
+    omusubi.forEach((item,index)=>
+    {
+    item.update();
+    item.draw();
+    if(item.x+item.width/2<0)
+        {
+            omusubi.splice(index,1);
+        }
+});
+}
+
+function responsive() {	
+  {
+    canvas.width = canvas.clientWidth * 2;
+    canvas.height = canvas.clientHeight * 2;
+    cx1.scale(2, 2);
+  }	}
+  window.addEventListener('resize', responsive);
+  responsive();
+
+
+function update()
+    {
+cx1.clearRect(0,0,canvas.width,canvas.height);
+cx1.drawImage(omusubistate,omusubiX,omusubiY,akarichansizeyoko,akarichansizetate);
+  updateomusubi();
+    }
+
+    function re()
+    {
+      clearTimeout(changeimginterval);
+      changeimginterval=setTimeout(() => 
+     {
+
+        omusubistate=futsu;
+            
+     }, 800);
+    }
+
+function syoutotsuchk() 
+{
+      omusubi.forEach((item,index)=>
+        {
+            const dstX=item.x-(omusubiX+akarichansizeyoko/2);
+            const dstY=item.y-(omusubiY+akarichansizetate/2);
+            const dst=Math.hypot(dstX,dstY);
+            if(dst<item.width/2+akarichansizeyoko/2)
+            {
+                omusubi.splice(index,1);
+                
+                omusubistate=oisii;
+                counter++;
+                localStorage.setItem("omusubi_ate_quantity", counter);
+                                re();
+            }
+              
+            }
+        
+        );
+}
+
+
+function begin()
+{
+gen_omusubi();
+  ginterval=setInterval(()=>
+{
+    update();
+    syoutotsuchk();
+},1000 / 60);
+}
+setInterval(gen_omusubi,5000);
+Promise.all([
+    futsu.decode(),
+    oisii.decode()
+])
+.then(() => {
+    begin();
+})
+.catch(error => {
+    console.error("画像の読み込みに失敗しました:", error);
+});
+
+canvas.addEventListener("click",gen_omusubi);
+    });
+
+</pre>
+<p>コードB(表示わく)</p>
+<pre style="background-color: #f0f0f0; color: #000; padding: 10px; border-radius: 5px; overflow-x: auto;">
+ &lt;style&gt;
+  #form{
+    width: 100%;
+    background-color:white;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 5px;
+   }
+&lt;/style&gt;
+&lt;canvas id=&quot;form&quot;&gt;&lt;/canvas&gt;
+&lt;script src=&quot;./demo.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>あせっと(材料素材)</p>
+<img src="./1.png" alt="あかりちゃんふつう" width="100" height="100" style="margin-right: 10px;border-radius: 5px; border: 5px solid #ccc;">
+<img src="./2.png" alt="あかりちゃんおいしい" width="100" height="100" style="margin-right: 10px;border-radius: 5px; border: 5px solid #ccc;">
+<img src="./omusubi.png" alt="おむすび" width="40" height="40" style="margin-right: 10px;border-radius: 5px; border: 5px solid #ccc;">
+</div>
+<p><small>2026/11/05</small></p>
+</article>
+</section>
+<aside class="sidebar">
+
+<div class="sidebar-box">
+<p><strong>現在時刻</strong></p>
+<span id="year"></span>年<span id="month"></span>月<span id="date"></span>日<span id="day"></span><br>
+<span id="hour"></span>:<span id="min"></span> <small><span id="sec"></span></small>
+</div>
+
+
+</aside>
+</main>
+<footer>
+<p><small>This page uses <a href="https://github.com/yokonoha/FSoverride" >FSLinear Override</a>.</small></p>
+</footer>
+<script>
+
+let errcode; document.addEventListener("DOMContentLoaded", () => {
+    setInterval((()=> {
+        let timemgr=new Date; let year=timemgr.getFullYear(); let mon=timemgr.getMonth()+1;
+        let xingqi=timemgr.getDay(); let hour=timemgr.getHours(); let min=timemgr.getMinutes();
+        let sec=timemgr.getSeconds(); let date=timemgr.getDate();
+        let decentformatofhour = (hour<10) ? "0"+hour : hour;
+        let decentformatofmin = (min<10) ? "0"+min : min;
+        let decentformatofsec = (sec<10) ? "0"+sec : sec;
+        let enday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][xingqi];
+        if(document.getElementById("year")) document.getElementById("year").innerHTML=year;
+        if(document.getElementById("month")) document.getElementById("month").innerHTML=mon;
+        if(document.getElementById("date")) document.getElementById("date").innerHTML=date;
+        if(document.getElementById("hour")) document.getElementById("hour").innerHTML=decentformatofhour;
+        if(document.getElementById("min")) document.getElementById("min").innerHTML=decentformatofmin;
+        if(document.getElementById("sec")) document.getElementById("sec").innerHTML=decentformatofsec;
+        if(document.getElementById("day")) document.getElementById("day").innerHTML=enday;
+        if(document.getElementById("ampm")) document.getElementById("ampm").innerHTML = (hour>=12) ? "PM" : "AM";
+        if(document.getElementById("hour2")) { let h12 = hour % 12; document.getElementById("hour2").innerHTML = (h12==0) ? 12 : h12; }
+    }),100);
+});
+</script>
+</body>
+</html>
