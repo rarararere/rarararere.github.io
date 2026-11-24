@@ -3,7 +3,7 @@
 ///     Made by Rarararere      ///
 ///     Based on Anzu-Widget    ///
 ///////////////////////////////////
-
+// The Original Version(Anzu-Widget) is licensed under Y.Yokoha B License.
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -142,11 +142,16 @@ gen_omusubi();
 },1000 / 60);
 }
 setInterval(gen_omusubi,5000);
-futsu.onload = () => {
-  oisii.onload = () => {
-      begin();
-  };
-};
+Promise.all([
+    futsu.decode(),
+    oisii.decode()
+])
+.then(() => {
+    begin();
+})
+.catch(error => {
+    console.error("画像の読み込みに失敗しました:", error);
+});
 
 canvas.addEventListener("click",gen_omusubi);
     });
